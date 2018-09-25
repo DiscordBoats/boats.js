@@ -16,7 +16,7 @@ class BOATSAPI {
 
   async postStats(serverCount, id) {
     if (!this.token) throw new Error('This function requires a token to be set');
-    if (!serverCount && !this.client) throw new Error('postStats requires 2 argument');
+    if (!serverCount) throw new Error('postStats requires 2 argument');
     if (!id) throw new Error('Please enter a bot id for posting count');
     const data = {};
     data.server_count = serverCount;
@@ -25,9 +25,15 @@ class BOATSAPI {
   }
 
   async getBot(id) {
-    if (!id && !this.client) throw new Error('getBot requires id as argument');
-    if (!id) id = this.client.user.id;
+    if (!id) throw new Error('getBot requires id as argument');
     const response = await this._request('get', `bot/${id}`);
+    const info = JSON.parse(response.text);
+    return info;
+  }
+
+  async getUser(id) {
+    if (!id) throw new Error('getUser requires id as argument');
+    const response = await this._request('get', `user/${id}`);
     const info = JSON.parse(response.text);
     return info;
   }

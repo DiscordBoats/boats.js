@@ -20,3 +20,11 @@ const BOATS = require("boats.js");
 const boats = new boats('Your Token');
 boats.getBot('bot-id');
 ```
+
+**Example of getting user info**
+
+```javascript
+const BOATS = require("boats.js");
+const boats = new boats('Your Token');
+boats.getUser('user-id');
+```
