@@ -1,0 +1,20 @@
+{
+  "name": "boats.js",
+  "version": "1.0.0",
+  "description": "A discordboats.xyz API wrapper",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiscordBoats/boats.js.git"
+  },
+  "keywords": [
+    "DiscordBoats",
+    "Discord"
+  ],
+  "author": "MrSheldon",
+  "license": "MIT",
+  "homepage": "https://boats.js.org",
+  "dependencies": {
+    "snekfetch": "^4.0.4"
+  }
+}
