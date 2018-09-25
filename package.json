@@ -1,6 +1,6 @@
 {
   "name": "boats.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A discordboats.xyz API wrapper",
   "main": "index.js",
   "repository": {
@@ -15,6 +15,6 @@
   "license": "MIT",
   "homepage": "https://boats.js.org",
   "dependencies": {
-    "snekfetch": "^4.0.4"
+    "node-superfetch": "^0.1.5"
   }
 }

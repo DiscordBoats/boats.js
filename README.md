@@ -3,28 +3,28 @@
 # Getting Started
 Simply Run `npm install boats.js`
 
-## Usage
+# Usage
 
-**Example of posting a bots servercount to the API**
+**Posting bot servercount**
 
-```javascript
+```js
 const BOATS = require("boats.js");
-const boats = new boats('Your Token');
-boats.postStats('your server count', 'your bot id');
+const boats = new boats('Token');
+boats.postStats('server count', 'bot id');
 ```
 
-**Example of getting bot info**
+**Getting bot info**
 
-```javascript
-const BOATS = require("boats.js");
-const boats = new boats('Your Token');
-boats.getBot('bot-id');
+```js
+const Boats = require("boats.js");
+const boats = new Boats('Token');
+boats.getBot('bot id');
 ```
 
-**Example of getting user info**
+**Getting user info**
 
-```javascript
-const BOATS = require("boats.js");
-const boats = new boats('Your Token');
-boats.getUser('user-id');
+```js
+const Boats = require("boats.js");
+const boats = new Boats('Token');
+boats.getUser('user id');
 ```
