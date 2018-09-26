@@ -1,7 +1,7 @@
 [![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js/)
 
 # Getting Started
-Simply Run `npm install boats.js`
+Simply Run `npm install boats.js@latest`
 
 ## Usage
 
@@ -9,7 +9,7 @@ Simply Run `npm install boats.js`
 
 ```javascript
 const BOATS = require("boats.js");
-const boats = new boats('Your Token');
+const boats = new BOATS('Your Token');
 boats.postStats('your server count', 'your bot id');
 ```
 
@@ -17,7 +17,7 @@ boats.postStats('your server count', 'your bot id');
 
 ```javascript
 const BOATS = require("boats.js");
-const boats = new boats('Your Token');
+const boats = new BOATS('Your Token');
 boats.getBot('bot-id');
 ```
 
@@ -25,6 +25,6 @@ boats.getBot('bot-id');
 
 ```javascript
 const BOATS = require("boats.js");
-const boats = new boats('Your Token');
+const boats = new BOATS('Your Token');
 boats.getUser('user-id');
 ```

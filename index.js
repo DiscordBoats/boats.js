@@ -27,15 +27,13 @@ class BOATSAPI {
   async getBot(id) {
     if (!id) throw new Error('getBot requires id as argument');
     const response = await this._request('get', `bot/${id}`);
-    const info = JSON.parse(response.text);
-    return info;
+    return response.body;
   }
 
   async getUser(id) {
     if (!id) throw new Error('getUser requires id as argument');
     const response = await this._request('get', `user/${id}`);
-    const info = JSON.parse(response.text);
-    return info;
+    return response.body;
   }
 }
 
