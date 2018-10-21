@@ -1,5 +1,5 @@
 const snekfetch = require('snekfetch');
-const API = 'https://discordboats.xyz/api/';
+const API = 'https://discord.boats/api/';
 
 class BOATSAPI {
   constructor(token) {

@@ -1,20 +1,28 @@
 {
-  "name": "boats.js",
-  "version": "1.3.4",
-  "description": "A discordboats.xyz API wrapper",
-  "main": "index.js",
+  "author": {
+    "name": "MrSheldon",
+    "email": "root@mrsheldon.me",
+    "url": "https://mrsheldon.me"
+  },
+  "dependencies": {
+    "snekfetch": "^4.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DiscordBoats/boats.js.git"
   },
+  "bugs": {
+    "url": "https://github.com/DiscordBoats/boats.js/issues"
+  },
+  "description": "A discordboats.xyz API wrapper",
+  "homepage": "https://boats.js.org",
   "keywords": [
     "DiscordBoats",
     "Discord"
   ],
-  "author": "MrSheldon",
   "license": "MIT",
-  "homepage": "https://boats.js.org",
-  "dependencies": {
-    "snekfetch": "^4.0.4"
-  }
+  "main": "index.js",
+  "name": "boats.js",
+  "version": "1.3.5",
+  "deprecated": false
 }
