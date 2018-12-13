@@ -11,7 +11,7 @@ Simply Run `npm install boats.js@latest`
 const BOATS = require("boats.js")
 const Boats = new BOATS("API TOKEN")
 
-Boats.postStast(SERVER_COUNT, BOT_ID).then(() => {
+Boats.postStats(SERVER_COUNT, BOT_ID).then(() => {
     console.log('Successfully updated server count.')
 }).catch((err) => {
     console.error(err)
