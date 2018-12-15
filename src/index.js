@@ -1,16 +1,16 @@
-const snekfetch = require('snekfetch');
+const { get, post } = require('snekfetch');
 const Error = require('./ErrorHandler')
 const API = 'https://discord.boats/api/';
 
-class BOATSAPI {
+modules.exports = class BOATSAPI {
   constructor(token) {
     this.token = token;
   }
 
   getBot(botid) {
-    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string')
+    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
     return new Promise((resolve, reject) => {
-      snekfetch.get(API + '/bot/' + botid).then((req) => {
+      get(API + '/bot/' + botid).then((req) => {
         resolve(req.body);
       }).catch((error) => {
         reject(new Error(error));
@@ -18,10 +18,22 @@ class BOATSAPI {
     });
   }
 
-  getUser(botid) {
-    if (typeof botid != 'string') throw new TypeError('User ID must be a string')
+  getVoted(botid, userid) {
+    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
+    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
     return new Promise((resolve, reject) => {
-      snekfetch.get(API + '/user/' + botid).then((req) => {
+      get(API + '/bot/' + botid + '/voted?id=' + userid).then((req) => {
+        resolve(req.body);
+      }).catch((error) => {
+        reject(new Error(error));
+      });
+    });
+  }
+
+  getUser(userid) {
+    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
+    return new Promise((resolve, reject) => {
+      get(API + '/user/' + userid).then((req) => {
         resolve(req.body);
       }).catch((error) => {
         reject(new Error(error));
@@ -33,7 +45,7 @@ class BOATSAPI {
     if (typeof servercount != 'number') throw new TypeError('Server count must be a number.');
     if (typeof botid != 'string') throw new TypeError('Bot ID must be a string.');
     return new Promise((resolve, reject) => {
-      snekfetch.post(API + '/bot/' + botid).set('Authorization', this.token).send({
+      post(API + '/bot/' + botid).set('Authorization', this.token).send({
         server_count: servercount
       }).then((req) => {
         resolve(req.body);
@@ -43,5 +55,3 @@ class BOATSAPI {
     });
   }
 }
-
-module.exports = BOATSAPI;
