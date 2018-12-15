@@ -11,7 +11,7 @@ Simply run `npm install boats.js@latest`
 const BOATS = require("boats.js");
 const Boats = new BOATS("API TOKEN");
 
-Boats.postStats(SERVER_COUNT, BOT_ID).then(() => {
+Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
     console.log('Successfully updated server count.');
 }).catch((err) => {
     console.error(err);
@@ -43,3 +43,15 @@ Boats.getUser('USER_ID').then(user => {
     console.error(err);
 });
 ```
+
+**Example of checking if a user has voted your bot**
+
+```javascript
+const BOATS = require("boats.js");
+const Boats = new BOATS("API TOKEN");
+
+Boats.getVoted('BOT_ID', 'USER_ID').then((voted) => {
+    console.log(voted);
+}).catch((err) => {
+    console.error(err);
+});

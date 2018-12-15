@@ -8,7 +8,7 @@ modules.exports = class BOATSAPI {
   }
 
   getBot(botid) {
-    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string')
+    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
     return new Promise((resolve, reject) => {
       get(API + '/bot/' + botid).then((req) => {
         resolve(req.body);
@@ -18,8 +18,20 @@ modules.exports = class BOATSAPI {
     });
   }
 
+  getVoted(botid, userid) {
+    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
+    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
+    return new Promise((resolve, reject) => {
+      get(API + '/bot/' + botid + '/voted?id=' + userid).then((req) => {
+        resolve(req.body);
+      }).catch((error) => {
+        reject(new Error(error));
+      });
+    });
+  }
+
   getUser(userid) {
-    if (typeof userid != 'string') throw new TypeError('User ID must be a string')
+    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
     return new Promise((resolve, reject) => {
       get(API + '/user/' + userid).then((req) => {
         resolve(req.body);
