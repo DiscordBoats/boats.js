@@ -55,3 +55,4 @@ Boats.getVoted('BOT_ID', 'USER_ID').then((voted) => {
 }).catch((err) => {
     console.error(err);
 });
+```
