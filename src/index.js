@@ -2,7 +2,7 @@ const { get, post } = require('snekfetch');
 const Error = require('./ErrorHandler')
 const API = 'https://discord.boats/api/';
 
-modules.exports = class BOATSAPI {
+module.exports = class BOATSAPI {
   constructor(token) {
     this.token = token;
   }
