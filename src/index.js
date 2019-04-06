@@ -43,17 +43,19 @@ module.exports = class BOATSAPI {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string.');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`${this.api}/bot/${botid}`, 
-         'POST', 
-         { headers: { 
+         const res = await wump(`${this.api}/bot/${botid}`,  
+         {
+          method: 'POST', 
+          headers: { 
+            'User-Agent': 'yeet',
            'Authorization': this.token 
           },
-          body: {
+          data: {
             'server_count': servercount 
           }
         }).send();
          resolve(res.json());
-      } catch (err) { reject(new Error(err)); }
+      } catch (err) { console.log(err) }
     });
   }
 }
