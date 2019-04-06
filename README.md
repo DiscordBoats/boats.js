@@ -1,15 +1,16 @@
 [![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js/)
 
 # Getting Started
-Simply run `npm install boats.js@latest`
+Simply run `npm i boats.js` (or `yarn add boats.js`)
 
 ## Usage
 
-**Example of posting bot servercount**
+**Examples**
 
+Posting Stats:
 ```javascript
-const BOATS = require("boats.js");
-const Boats = new BOATS("API TOKEN");
+const BOATS = require('boats.js');
+const Boats = new BOATS('API TOKEN');
 
 Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
     console.log('Successfully updated server count.');
@@ -18,11 +19,10 @@ Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
 });
 ```
 
-**Example of getting bot info**
-
+Getting Bot Info:
 ```javascript
-const BOATS = require("boats.js");
-const Boats = new BOATS("API TOKEN");
+const BOATS = require('boats.js');
+const Boats = new BOATS('API TOKEN');
 
 Boats.getBot('BOT_ID').then(bot => {
     console.log(bot);
@@ -31,11 +31,10 @@ Boats.getBot('BOT_ID').then(bot => {
 });
 ```
 
-**Example of getting user info**
-
+Getting User Info:
 ```javascript
-const BOATS = require("boats.js");
-const Boats = new BOATS("API TOKEN");
+const BOATS = require('boats.js');
+const Boats = new BOATS('API TOKEN');
 
 Boats.getUser('USER_ID').then(user => {
     console.log(user);
@@ -44,11 +43,10 @@ Boats.getUser('USER_ID').then(user => {
 });
 ```
 
-**Example of checking if a user has voted your bot**
-
+Checking if a user voted your bot:
 ```javascript
-const BOATS = require("boats.js");
-const Boats = new BOATS("API TOKEN");
+const BOATS = require('boats.js');
+const Boats = new BOATS('API TOKEN');
 
 Boats.getVoted('BOT_ID', 'USER_ID').then((voted) => {
     console.log(voted);
