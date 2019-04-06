@@ -55,7 +55,7 @@ module.exports = class BOATSAPI {
           }
         }).send();
          resolve(res.json());
-      } catch (err) { console.log(err) }
+      } catch (err) { reject(new Error(err)); }
     });
   }
 }
