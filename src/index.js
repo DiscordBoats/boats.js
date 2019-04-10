@@ -1,57 +1,61 @@
-const { get, post } = require('snekfetch');
-const Error = require('./ErrorHandler')
-const API = 'https://discord.boats/api/';
+const wump  = require('wumpfetch');
+const Error = require('./ErrorHandler');
 
 module.exports = class BOATSAPI {
   constructor(token) {
     this.token = token;
+    this.api = 'https://discord.boats/api';
   }
 
   getBot(botid) {
-    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
-    return new Promise((resolve, reject) => {
-      get(API + '/bot/' + botid).then((req) => {
-        resolve(req.body);
-      }).catch((error) => {
-        reject(new Error(error));
-      });
+    if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string.');
+    return new Promise(async (resolve, reject) => {
+      try {
+         const res = await wump(`${this.api}/bot/${botid}`).send();
+         resolve(res.json());
+      } catch (err) { reject(new Error(err)); }
     });
   }
 
   getVoted(botid, userid) {
-    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
-    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string');
-    return new Promise((resolve, reject) => {
-      get(API + '/bot/' + botid + '/voted?id=' + userid).then((req) => {
-        resolve(req.body);
-      }).catch((error) => {
-        reject(new Error(error));
-      });
+    if (typeof userid !== 'string') throw new TypeError('User ID must be a string');
+    if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string.');
+    return new Promise(async (resolve, reject) => {
+      try {
+         const res = await wump(`${this.api}/bot/${botid}/voted?id=${userid}`).send();
+         resolve(res.json());
+      } catch (err) { reject(new Error(err)); }
     });
   }
 
   getUser(userid) {
-    if (typeof userid != 'string') throw new TypeError('User ID must be a string');
-    return new Promise((resolve, reject) => {
-      get(API + '/user/' + userid).then((req) => {
-        resolve(req.body);
-      }).catch((error) => {
-        reject(new Error(error));
-      });
+    if (typeof userid !== 'string') throw new TypeError('User ID must be a string');
+    return new Promise(async (resolve, reject) => {
+      try {
+         const res = await wump(`${this.api}/user/${userid}`).send();
+         resolve(res.json());
+      } catch (err) { reject(new Error(err)); }
     });
   }
 
   postStats(servercount, botid) {
-    if (typeof servercount != 'number') throw new TypeError('Server count must be a number.');
-    if (typeof botid != 'string') throw new TypeError('Bot ID must be a string.');
-    return new Promise((resolve, reject) => {
-      post(API + '/bot/' + botid).set('Authorization', this.token).send({
-        server_count: servercount
-      }).then((req) => {
-        resolve(req.body);
-      }).catch((error) => {
-        reject(new Error(error));
-      });
+    if (typeof servercount !== 'number') throw new TypeError('Server count must be a number.');
+    if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string.');
+    return new Promise(async (resolve, reject) => {
+      try {
+         const res = await wump(`${this.api}/bot/${botid}`,  
+         {
+          method: 'POST', 
+          headers: { 
+            'User-Agent': 'yeet',
+           'Authorization': this.token 
+          },
+          data: {
+            'server_count': servercount 
+          }
+        }).send();
+         resolve(res.json());
+      } catch (err) { reject(new Error(err)); }
     });
   }
 }
