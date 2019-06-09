@@ -1,16 +1,16 @@
 const wump = require('wumpfetch');
 
 module.exports = class Boats {
-  constructor(token, api) {
+  constructor(token, version) {
     this.token = token;
-    this.api = api || 'https://discord.boats/api/v2';
+    this.version = version || 'v2';
   }
 
   getBot(botid) {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`${this.api}/bot/${botid}`).send();
+         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`).send();
          resolve(res.json());
       } catch (err) { reject(new Error(err)); }
     });
@@ -21,7 +21,7 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`${this.api}/bot/${botid}/voted?id=${userid}`).send();
+         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}/voted?id=${userid}`).send();
          resolve(res.json());
       } catch (err) { reject(new Error(err)); }
     });
@@ -31,7 +31,7 @@ module.exports = class Boats {
     if (typeof userid !== 'string') throw new TypeError('User ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`${this.api}/user/${userid}`).send();
+         const res = await wump(`https://discord.boats/api/${this.version}/user/${userid}`).send();
          resolve(res.json());
       } catch (err) { reject(new Error(err)); }
     });
@@ -43,7 +43,7 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`${this.api}/bot/${botid}`, {
+         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`, {
           method: 'POST', 
           headers: { 'Authorization': this.token },
           data: { 'server_count': servercount  }
