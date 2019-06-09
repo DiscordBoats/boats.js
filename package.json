@@ -7,22 +7,25 @@
   "bugs": {
     "url": "https://github.com/DiscordBoats/boats.js/issues"
   },
-  "deprecated": false,
-  "description": "A discord.boats API wrapper",
+  "description": "The official discord.boats API wrapper for Node.js",
   "homepage": "https://boats.js.org",
   "keywords": [
     "DiscordBoats",
-    "Discord"
+    "Discord",
+    "Boats",
+    "Discord Bots",
+    "Discord Bot",
+    "Bot"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "index.js",
   "name": "boats.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DiscordBoats/boats.js.git"
   },
-  "version": "2.2.0",
+  "version": "2.3.0",
   "dependencies": {
-    "wumpfetch": "^0.2.1"
+    "wumpfetch": "^0.2.13"
   }
 }

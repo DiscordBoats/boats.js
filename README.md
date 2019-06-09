@@ -1,16 +1,19 @@
 [![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js/)
 
-# Getting Started
+# Boats.js
+The official https://discord.boats API wrapper for Node.js
+
+## Installation
 Simply run `npm i boats.js` (or `yarn add boats.js`)
 
 ## Usage
 
-**Examples**
+**Examples** (Sync)
 
 Posting Stats:
-```javascript
+```js
 const BOATS = require('boats.js');
-const Boats = new BOATS('API TOKEN');
+const Boats = new BOATS('API TOKEN', 'API URL (OPTIONAL)');
 
 Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
     console.log('Successfully updated server count.');
@@ -20,7 +23,7 @@ Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
 ```
 
 Getting Bot Info:
-```javascript
+```js
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
@@ -32,7 +35,7 @@ Boats.getBot('BOT_ID').then(bot => {
 ```
 
 Getting User Info:
-```javascript
+```js
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
@@ -44,7 +47,7 @@ Boats.getUser('USER_ID').then(user => {
 ```
 
 Checking if a user voted your bot:
-```javascript
+```js
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
