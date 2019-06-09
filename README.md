@@ -13,7 +13,7 @@ Simply run `npm i boats.js` (or `yarn add boats.js`)
 Posting Stats:
 ```js
 const BOATS = require('boats.js');
-const Boats = new BOATS('API TOKEN', 'API URL (OPTIONAL)');
+const Boats = new BOATS('API TOKEN', 'API VERSION (OPTIONAL, e.g "v2" or "v1")');
 
 Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
     console.log('Successfully updated server count.');
