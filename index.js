@@ -1,4 +1,4 @@
-const wump = require('wumpfetch');
+const fetch = require('node-fetch');
 
 module.exports = class Boats {
   constructor(token, version) {
@@ -10,8 +10,8 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`).send();
-         resolve(res.json());
+         const res = await fetch(`https://discord.boats/api/${this.version}/bot/${botid}`);
+         resolve(await res.json());
       } catch (err) { reject(new Error(err)); }
     });
   }
@@ -21,8 +21,8 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}/voted?id=${userid}`).send();
-         resolve(res.json());
+         const res = await fetch(`https://discord.boats/api/${this.version}/bot/${botid}/voted?id=${userid}`);
+         resolve(await res.json());
       } catch (err) { reject(new Error(err)); }
     });
   }
@@ -31,8 +31,8 @@ module.exports = class Boats {
     if (typeof userid !== 'string') throw new TypeError('User ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/user/${userid}`).send();
-         resolve(res.json());
+         const res = await fetch(`https://discord.boats/api/${this.version}/user/${userid}`);
+         resolve(await res.json());
       } catch (err) { reject(new Error(err)); }
     });
   }
@@ -43,12 +43,12 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`, {
+         const res = await fetch(`https://discord.boats/api/${this.version}/bot/${botid}`, {
           method: 'POST', 
           headers: { 'Authorization': this.token },
-          data: { 'server_count': servercount  }
-        }).send();
-        resolve(res.json());
+          body: { 'server_count': servercount  }
+        });
+        resolve(await res.json());
       } catch (err) { reject(new Error(err)); }
     });
   }

@@ -25,7 +25,5 @@
     "url": "git+https://github.com/DiscordBoats/boats.js.git"
   },
   "version": "2.3.0",
-  "dependencies": {
-    "wumpfetch": "^0.2.13"
-  }
+  "dependencies": {}
 }
