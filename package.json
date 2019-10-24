@@ -26,6 +26,6 @@
   },
   "version": "2.3.0",
   "dependencies": {
-    "wumpfetch": "^0.2.13"
+    "wumpfetch": "^0.3.0"
   }
 }
