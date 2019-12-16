@@ -1,6 +1,17 @@
+/**
+ * @module boats.js
+ * @copyright Roee Lupo 2018-2019
+ * @license MIT
+ */
 const wump = require('wumpfetch');
 
-module.exports = class Boats {
+module.exports = class BoatsClient {
+  /**
+   * Create Boats class
+   * @constructor
+   * @param {string} token - Your Discord Boats token
+   * @param {string} version - API version to use (optional)
+   */
   constructor(token, version) {
     this.token = token;
     this.version = version || 'v2';
@@ -16,9 +27,11 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`).send();
-         resolve(res.json());
-      } catch (err) { reject(new Error(err)); }
+        const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`).send();
+        resolve(res.json());
+      } catch (err) { 
+        reject(new Error(err)); 
+      }
     });
   }
 
@@ -34,9 +47,11 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}/voted?id=${userid}`).send();
-         resolve(res.json());
-      } catch (err) { reject(new Error(err)); }
+        const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}/voted?id=${userid}`).send();
+        resolve(res.json());
+      } catch (err) { 
+        reject(new Error(err)); 
+      }
     });
   }
 
@@ -51,9 +66,11 @@ module.exports = class Boats {
     if (typeof userid !== 'string') throw new TypeError('User ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/user/${userid}`).send();
-         resolve(res.json());
-      } catch (err) { reject(new Error(err)); }
+        const res = await wump(`https://discord.boats/api/${this.version}/user/${userid}`).send();
+        resolve(res.json());
+      } catch (err) { 
+        reject(new Error(err)); 
+      }
     });
   }
 
@@ -69,13 +86,19 @@ module.exports = class Boats {
     if (typeof botid !== 'string') throw new TypeError('Bot ID must be a string');
     return new Promise(async (resolve, reject) => {
       try {
-         const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`, {
+        const res = await wump(`https://discord.boats/api/${this.version}/bot/${botid}`, {
           method: 'POST', 
-          headers: { 'Authorization': this.token },
-          data: { 'server_count': servercount  }
+          headers: { 
+            'Authorization': this.token 
+          },
+          data: { 
+            'server_count': servercount 
+          }
         }).send();
         resolve(res.json());
-      } catch (err) { reject(new Error(err)); }
+      } catch (err) { 
+        reject(new Error(err)); 
+      }
     });
   }
 };
