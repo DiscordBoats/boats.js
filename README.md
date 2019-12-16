@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js/)
+[![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js)
 
 # Boats.js
 The official https://discord.boats API wrapper for Node.js
