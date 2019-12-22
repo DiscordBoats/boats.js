@@ -1,6 +1,9 @@
 # Directories
+.github/
 node_modules/
 
 # Files
+CNAME
 yarn.lock
+_config.yml
 package-lock.json

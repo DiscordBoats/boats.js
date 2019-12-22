@@ -55,7 +55,6 @@ module.exports = class BoatsClient {
     });
   }
 
-  
   /**
    * Gets information about the given user.
    *

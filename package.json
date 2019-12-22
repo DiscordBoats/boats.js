@@ -1,9 +1,9 @@
 {
-  "author": {
-    "name": "MrSheldon",
-    "email": "root@mrsheldon.me",
-    "url": "https://mrsheldon.me"
-  },
+  "author": "MrSheldon <root@mrsheldon.me> (https://mrsheldon.me)",
+  "maintainers": [
+    "MrSheldon <root@mrsheldon.me> (https://mrsheldon.me)",
+    "David \"ohlookitsderpy\" Ralph <contact@davidralph.me> (https://derpyenterprises.org)"
+  ],
   "bugs": {
     "url": "https://github.com/DiscordBoats/boats.js/issues"
   },
@@ -21,11 +21,8 @@
   "main": "index.js",
   "name": "boats.js",
   "types": "index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DiscordBoats/boats.js.git"
-  },
-  "version": "2.3.0",
+  "repository": "github:DiscordBoats/boats.js",
+  "version": "2.4.0",
   "dependencies": {
     "wumpfetch": "^0.3.0"
   }
