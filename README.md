@@ -69,11 +69,7 @@ Getting Bot Info:
 const BOATS = require('boats.js');
 const Boats = new BOATS();
 
-Boats.getBot('BOT_ID').then(bot => {
-    console.log(bot);
-}).catch((err) => {
-    console.error(err);
-});
+console.log(await Boats.getBot('BOT_ID'));
 ```
 
 Getting User Info:
