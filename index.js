@@ -1,6 +1,6 @@
 /**
  * @module boats.js
- * @copyright Roee Lupo 2018-2019
+ * @copyright Roee Lupo 2018-2020
  * @license MIT
  */
 const wump = require('wumpfetch');
