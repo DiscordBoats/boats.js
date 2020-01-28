@@ -8,7 +8,8 @@ Simply run `npm i boats.js` (or `yarn add boats.js`)
 
 ## Usage
 (Sync)
-Posting Stats:
+
+Posting Bot Server Count:
 ```js
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
@@ -22,7 +23,7 @@ Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
 
 Getting Bot Info:
 ```js
-const BOATS = require();
+const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
 Boats.getBot('BOT_ID').then(bot => {
@@ -57,6 +58,8 @@ Boats.getVoted('BOT_ID', 'USER_ID').then((voted) => {
 ```
 
 (Async)
+
+Posting Bot Server Count
 ```js
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN', 'API VERSION (OPTIONAL, e.g "v2" or "v1")');
@@ -87,3 +90,5 @@ const Boats = new BOATS();
 
 console.log(await Boats.getVoted('BOT_ID', 'USER_ID'));
 ```
+## License
+[MIT](LICENSE)
