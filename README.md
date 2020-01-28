@@ -90,5 +90,6 @@ const Boats = new BOATS();
 
 console.log(await Boats.getVoted('BOT_ID', 'USER_ID'));
 ```
+
 ## License
 [MIT](LICENSE)
