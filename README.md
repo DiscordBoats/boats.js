@@ -15,9 +15,9 @@ const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
 Boats.postStats('SERVER_COUNT', 'BOT_ID').then(() => {
-    console.log('Successfully updated server count.');
+    console.log('Successfully updated server count.')
 }).catch((err) => {
-    console.error(err);
+    console.error(err)
 });
 ```
 
@@ -27,9 +27,9 @@ const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
 Boats.getBot('BOT_ID').then(bot => {
-    console.log(bot);
+    console.log(bot)
 }).catch((err) => {
-    console.error(err);
+    console.error(err)
 });
 ```
 
@@ -39,9 +39,9 @@ const BOATS = require('boats.js');
 const Boats = new BOATS();
 
 Boats.getUser('USER_ID').then(user => {
-    console.log(user);
+    console.log(user)
 }).catch((err) => {
-    console.error(err);
+    console.error(err)
 });
 ```
 
@@ -51,9 +51,9 @@ const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN');
 
 Boats.getVoted('BOT_ID', 'USER_ID').then((voted) => {
-    console.log(voted);
+    console.log(voted)
 }).catch((err) => {
-    console.error(err);
+    console.error(err)
 });
 ```
 
@@ -64,7 +64,7 @@ Posting Bot Server Count
 const BOATS = require('boats.js');
 const Boats = new BOATS('API TOKEN', 'API VERSION (OPTIONAL, e.g "v2" or "v1")');
 
-await Boats.postStats('SERVER_COUNT', 'BOT_ID');
+await Boats.postStats('SERVER_COUNT', 'BOT_ID')
 ```
 
 Getting Bot Info:
@@ -72,7 +72,7 @@ Getting Bot Info:
 const BOATS = require('boats.js');
 const Boats = new BOATS();
 
-console.log(await Boats.getBot('BOT_ID'));
+console.log(await Boats.getBot('BOT_ID'))
 ```
 
 Getting User Info:
@@ -80,7 +80,7 @@ Getting User Info:
 const BOATS = require('boats.js');
 const Boats = new BOATS();
 
-console.log(await Boats.getUser('USER_ID'));
+console.log(await Boats.getUser('USER_ID'))
 ```
 
 Checking if a user voted your bot:
@@ -88,7 +88,7 @@ Checking if a user voted your bot:
 const BOATS = require('boats.js');
 const Boats = new BOATS();
 
-console.log(await Boats.getVoted('BOT_ID', 'USER_ID'));
+console.log(await Boats.getVoted('BOT_ID', 'USER_ID'))
 ```
 
 ## License
