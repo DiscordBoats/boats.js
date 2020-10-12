@@ -1,7 +1,7 @@
 {
-  "author": "MrSheldon <root@mrsheldon.me> (https://mrsheldon.me)",
+  "author": "Roee Lupo <roee@discord.boats> (https://roeelupo.com)",
   "maintainers": [
-    "MrSheldon <root@mrsheldon.me> (https://mrsheldon.me)",
+    "Roee Lupo <roee@discord.boats> (https://roeelupo.com)",
     "David \"ohlookitsderpy\" Ralph <contact@davidralph.me> (https://derpyenterprises.org)"
   ],
   "bugs": {
@@ -22,7 +22,7 @@
   "name": "boats.js",
   "types": "index.d.ts",
   "repository": "github:DiscordBoats/boats.js",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "dependencies": {
     "wumpfetch": "^0.3.0"
   }
