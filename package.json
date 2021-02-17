@@ -2,7 +2,7 @@
   "author": "Roee Lupo <roee@discord.boats> (https://roeelupo.com)",
   "maintainers": [
     "Roee Lupo <roee@discord.boats> (https://roeelupo.com)",
-    "David \"ohlookitsderpy\" Ralph <contact@davidralph.me> (https://derpyenterprises.org)"
+    "David Ralph <me@davidjcralph.co.uk> (https://davidjcralph.co.uk)"
   ],
   "bugs": {
     "url": "https://github.com/DiscordBoats/boats.js/issues"
@@ -18,12 +18,12 @@
     "Bot"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "name": "boats.js",
   "types": "index.d.ts",
   "repository": "github:DiscordBoats/boats.js",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "dependencies": {
-    "wumpfetch": "^0.3.0"
+    "wumpfetch": "^0.3.1"
   }
 }
