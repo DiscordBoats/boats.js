@@ -22,7 +22,7 @@
   "name": "boats.js",
   "types": "index.d.ts",
   "repository": "github:DiscordBoats/boats.js",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "dependencies": {
     "wumpfetch": "^0.3.1"
   }

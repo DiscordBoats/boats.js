@@ -4,6 +4,8 @@ node_modules/
 
 # Files
 CNAME
+test.js
 yarn.lock
 _config.yml
 package-lock.json
+CODE_OF_CONDUCT.md
