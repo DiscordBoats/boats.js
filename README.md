@@ -1,3 +1,6 @@
+# DEPRECATED
+The website this module is for has shutdown.
+
 [![NPM](https://nodei.co/npm/boats.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/boats.js)
 
 # Boats.js
